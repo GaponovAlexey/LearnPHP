@@ -1,3 +1,3 @@
 <?php
-echo 'Hello ' . htmlspecialchars($_POST["name"])
+print_r($_POST)
 ?>
