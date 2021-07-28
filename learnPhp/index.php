@@ -5,7 +5,16 @@
 	<title>FormProcessing</title>
 
 <body>
-	<form name="test" action="check.php" method="post">
+	<?php
+	if (isset($_POST["dane"])) {
+		if ($_POST["name"] == "")
+			echo "Ведите имя <a href='/learnPhp/index.php' /> Исправить";
+		else
+			header("Location:index.php");
+	}
+
+	?>
+	<form name="test" action="" method="post">
 		<label>Name: </label><br />
 		<input type="text" name="name" placeholder="Name" /><br />
 		<label>Email: </label><br />
