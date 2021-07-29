@@ -45,6 +45,9 @@
 		//print_r($_SESSION);
 		$a = ($_SESSION);
 		print_r($a);
+		//$file = fopen("form.txt", "utf-8", "w+");
+		file_put_contents("form.json", $a);
+
 		//$subject = "=?utf-8?B?".base64_encode($subject)."?=";
 		//$headers = "From: $from\r\nReply-to:$from\r\nContent-type:text/plain; charset=utf-8\r\n";
 		//mail($from, $to, $subject, $message, $headers);
