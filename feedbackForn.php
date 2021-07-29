@@ -11,7 +11,7 @@
 <body>
 
 	<?php
-	session_start();
+	//session_start();
 	if (isset($_POST["send"])) {
 		$from = htmlspecialchars($_POST["from"]);
 		$to = htmlspecialchars($_POST["to"]);
@@ -21,27 +21,36 @@
 		$_SESSION["to"] = $to;
 		$_SESSION["subject"] = $subject;
 		$_SESSION["massage"] = $massage;
-		print_r($_SESSION);
 		$error_from = "";
 		$error_to = "";
 		$error_subject = "";
 		$error_massage = "";
-		if($from == "" || !preg_match("/@/", $from)) {
+		if ($from == "" || !preg_match("/@/", $from)) {
 			$error_from = "Error email";
 			$error = true;
 		}
-		if($to == "" || !preg_match("/@/", $to)) {
+		if ($to == "" || !preg_match("/@/", $to)) {
 			$error_to = "Error email";
 			$error = true;
 		}
-		if(strlen($subject) == 0) {
+		if (strlen($subject) == 0) {
 			$error_subject = "the have need in the theme of messages";
 			$error = true;
 		}
-		if(strlen($massage) == 0) {
+		if (strlen($massage) == 0) {
 			$error_massage = "the have need in the theme of messages";
 			$error = true;
 		}
+
+		//print_r($_SESSION);
+		$a = ($_SESSION);
+		print_r($a);
+		//$subject = "=?utf-8?B?".base64_encode($subject)."?=";
+		//$headers = "From: $from\r\nReply-to:$from\r\nContent-type:text/plain; charset=utf-8\r\n";
+		//mail($from, $to, $subject, $message, $headers);
+		//header("location: success.php");
+		//exit;
+
 	}
 	?>
 
