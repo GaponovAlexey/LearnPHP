@@ -45,17 +45,12 @@
 		//print_r($_SESSION);
 		$a = ($_SESSION);
 		print_r($a);
-		//$file = fopen("form.txt", "utf-8", "w+");
-		file_put_contents("form.json", $a);
 
-		//$subject = "=?utf-8?B?".base64_encode($subject)."?=";
-		//$headers = "From: $from\r\nReply-to:$from\r\nContent-type:text/plain; charset=utf-8\r\n";
-		//mail($from, $to, $subject, $message, $headers);
-		//header("location: success.php");
-		//exit;
-
+		
 	}
+	
 	?>
+	
 
 	<h2>feedbackForm</h2>
 	<form method="post" name="feedback" action="">
@@ -73,6 +68,9 @@
 		<input type="submit" name="send" value='send' />
 		<span style="color:red"><?= $error_massage ?></span>
 	</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </body>
 
 </html>

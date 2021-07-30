@@ -1,8 +1,16 @@
 <?php
-session_start();
-$num = (isset($_SESSION["num"])) ?
-	$_SESSION["num"] : 0;
-$num++; //"session count"			
-$_SESSION["num"] = $num;
-echo "the user has refreshed the page :$num";			
-//session_destroy();			
+
+$.ajax(
+  'request_ajax_data.php',
+  {
+      success: function(data) {
+        alert('AJAX call was successful!');
+        alert('Data from the server' + data);
+      },
+      error: function() {
+        alert('There was some error performing the AJAX call!');
+      }
+   }
+);
+
+?>
